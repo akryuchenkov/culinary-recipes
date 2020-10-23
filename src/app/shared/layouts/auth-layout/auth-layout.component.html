@@ -1,17 +1,22 @@
 <nav>
-  <div class="nav-wrapper grey darken-1">
-  <a routerLink="/" class="brand-logo">Главная страница</a>
-  <ul id="nav-mobile" class="right hide-on-med-and-down>">
+  <div><a class="first-layout" routerLink="/">Ma chérie</a>
+    <ul>
       <li routerLinkActive="active">
-        <a routerLink="login">Вход</a>
+        <a class="login" routerLinkActive="active" routerLink="/login">Вход</a>
       </li>
-      <li routerLinkActive="active">
-        <a routerLink="register">Регистрация</a>
+      <li>
+        <a class="registration" routerLink="/register">Регистрация</a>
       </li>
-  </ul>
+    </ul>
   </div>
 </nav>
 
-<div class="auth-block">
-  <router-outlet></router-outlet>
+
+<div class="limiter">
+  <div class="container-login100" style="background-image: url('https://i.imgur.com/NaoM9jL.jpg');">
+    <div class="wrap-login100 p-t-30 p-b-50">
+
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>

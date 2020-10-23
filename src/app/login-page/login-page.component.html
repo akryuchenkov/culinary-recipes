@@ -1,26 +1,52 @@
-<form
-  class="card"
->
-  <div class="card-content">
-    <span class="card-title">Войти в систему</span>
-    <div class="input-filed">
-      <label for="email">Email:</label>
-      <input id="email" type="email" required>
+<div class="wrap-login100 p-t-30 p-b-50">
+  <span class="login100-form-title p-b-41">Войти в систему</span>
+  <form
+    class="login100-form validate-form p-b-33 p-t-5"
 
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()" >
+    <div>
+
+      <div class="wrap-input100 validate-input">
+        <input
+          class="input100"
+          placeholder="Email"
+          formControlName="email"
+          id="email"
+          type="email"
+          [ngClass]="{'invalid': form.get('email').invalid && form.get('email').touched}" >
+
+        <span
+          class="focus-input100 red-text"
+          *ngIf="form.get('email').invalid && form.get('email').touched">
+        <span *ngIf="form.get('email').errors['required']">Email не должен быть пустым</span>
+        <span *ngIf="form.get('email').errors['email']">Введите корректный email</span>
+      </span>
+      </div>
+      <div class="wrap-input100 validate-input">
+        <input
+          class="input100"
+          placeholder="Пароль"
+          formControlName="password"
+          id="password"
+          type="password"
+          [ngClass]="{'invalid': form.get('password').invalid && form.get('password').touched}" >
+        <span
+          class="focus-input100 red-text"
+          *ngIf="form.get('password').invalid && form.get('password').touched">
+        <span *ngIf="form.get('password').errors['required']">Пароль не должен быть пустым</span>
+          <span *ngIf="form.get('password')['errors']['minlength'] && form.get('password')['errors']['minlength']['requiredLength']">
+            Пароль должен быть больше {{ form.get('password')['errors']['minlength']['requiredLength'] }}символов.
+            Сейчас {{ form.get('password')['errors']['minlength']['actualLength'] }}.
+        </span>
+      </span>
+      </div>
     </div>
-    <div class="input-filed">
-      <label for="password">Пароль:</label>
-      <input id="password" type="password" required>
+    <div class="container-login100-form-btn m-t-32">
+      <button
+        class="login100-form-btn"
+        type="submit"
+        [disabled]="form.invalid">Войти</button>
     </div>
-  </div>
-  <div class="card-action">
-    <button
-      type="submit"
-      class="modal-action btn waves-effect">
-      ВОЙТИ
-    </button>
-  </div>
-</form>
-
-
-
+  </form>
+</div>

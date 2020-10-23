@@ -3,26 +3,25 @@ import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
-import {LoginPageComponent} from './login-page/login-page.component';
 import {AppRoutingModule} from './app-routing.module';
-import {AuthLayoutComponent} from './shared/layouts/auth-layout/auth-layout.component';
-import {SiteLayoutComponent} from './shared/layouts/site-layout/site-layout.component';
-import {RegisterPageComponent} from './register-page/register-page.component';
+import {LoginPageModule} from './login-page/login-page.module';
+import {RegisterPageModule} from './register-page/register-page.module';
+import {AuthLayoutModule} from './shared/layouts/auth-layout/auth-layout.module';
+import {SiteLayoutModule} from './shared/layouts/site-layout/site-layout.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginPageComponent,
-    AuthLayoutComponent,
-    SiteLayoutComponent,
-    RegisterPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LoginPageModule,
+    RegisterPageModule,
+    AuthLayoutModule,
+    SiteLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
