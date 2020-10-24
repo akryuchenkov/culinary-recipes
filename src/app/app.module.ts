@@ -4,10 +4,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
-import {LoginPageModule} from './login-page/login-page.module';
-import {RegisterPageModule} from './register-page/register-page.module';
-import {AuthLayoutModule} from './shared/layouts/auth-layout/auth-layout.module';
 import {SiteLayoutModule} from './shared/layouts/site-layout/site-layout.module';
+import {AuthModule} from './modules/auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -18,9 +16,9 @@ import {SiteLayoutModule} from './shared/layouts/site-layout/site-layout.module'
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    LoginPageModule,
-    RegisterPageModule,
-    AuthLayoutModule,
+    AuthModule,
+
+
     SiteLayoutModule
   ],
   providers: [],

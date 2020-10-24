@@ -10,7 +10,8 @@ export class LoginPageComponent implements OnInit {
   form: FormGroup;
 
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -18,7 +19,8 @@ export class LoginPageComponent implements OnInit {
       password: new FormControl(null, [Validators.required, Validators.minLength(6)])
     });
   }
-  onSubmit() {
+
+  onSubmit(): void {
   }
 
 }
