@@ -1,4 +1,4 @@
-<div class="wrap-login100 p-t-30 p-b-50">
+<div>
   <span class="login100-form-title p-b-41">Войти в систему</span>
   <form
     (ngSubmit)="onSubmit()"
@@ -17,8 +17,8 @@
         <span
           *ngIf="form.get('email').invalid && form.get('email').touched"
           class="focus-input100 red-text">
-        <span *ngIf="form.get('email').errors['required']">Email не должен быть пустым</span>
-        <span *ngIf="form.get('email').errors['email']">Введите корректный email</span>
+          <span *ngIf="form.get('email').errors['required']">Email не должен быть пустым</span>
+          <span *ngIf="form.get('email').errors['email']">Введите корректный email</span>
       </span>
       </div>
       <div class="wrap-input100 validate-input">
