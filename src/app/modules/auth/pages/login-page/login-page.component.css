@@ -71,11 +71,11 @@
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 
-  background: #d41872;
-  background: -webkit-linear-gradient(left, #a445b2, #d41872, #fa4299);
-  background: -o-linear-gradient(left, #a445b2, #d41872, #fa4299);
-  background: -moz-linear-gradient(left, #a445b2, #d41872, #fa4299);
-  background: linear-gradient(left, #a445b2, #d41872, #fa4299);
+  /*background: #d41872;*/
+  /*background: -webkit-linear-gradient(left, #a445b2, #d41872, #fa4299);*/
+  /*background: -o-linear-gradient(left, #a445b2, #d41872, #fa4299);*/
+  /*background: -moz-linear-gradient(left, #a445b2, #d41872, #fa4299);*/
+  /*background: linear-gradient(left, #a445b2, #d41872, #fa4299);*/
 }
 
 .focus-input100::after {
