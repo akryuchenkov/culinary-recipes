@@ -3,49 +3,69 @@
   <form
     (ngSubmit)="onSubmit()"
     [formGroup]="form"
-    class="login100-form validate-form p-b-33 p-t-5">
+    class="login100-form validate-form p-b-33 p-t-5"
+  >
     <div>
       <div class="wrap-input100 validate-input">
         <input
-          [ngClass]="{'invalid': form.get('email').invalid && form.get('email').touched}"
+          [ngClass]="{
+            invalid: form.get('email').invalid && form.get('email').touched
+          }"
           class="input100"
           formControlName="email"
           id="email"
           placeholder="Email"
-          type="email">
+          type="email"
+        />
 
         <span
           *ngIf="form.get('email').invalid && form.get('email').touched"
-          class="focus-input100 red-text">
-          <span *ngIf="form.get('email').errors['required']">Email не должен быть пустым</span>
-          <span *ngIf="form.get('email').errors['email']">Введите корректный email</span>
-      </span>
+          class="focus-input100 red-text"
+        >
+          <span *ngIf="form.get('email').errors['required']"
+            >Email не должен быть пустым
+          </span>
+          <span *ngIf="form.get('email').errors['email']">
+            Введите корректный email
+          </span>
+        </span>
       </div>
       <div class="wrap-input100 validate-input">
         <input
-          [ngClass]="{'invalid': form.get('password').invalid && form.get('password').touched}"
+          [ngClass]="{
+            invalid:
+              form.get('password').invalid && form.get('password').touched
+          }"
           class="input100"
           formControlName="password"
           id="password"
           placeholder="Пароль"
-          type="password">
+          type="password"
+        />
         <span
           *ngIf="form.get('password').invalid && form.get('password').touched"
-          class="focus-input100 red-text">
-        <span *ngIf="form.get('password').errors['required']">Пароль не должен быть пустым</span>
+          class="focus-input100 red-text"
+        >
+          <span *ngIf="form.get('password').errors['required']"
+            >Пароль не должен быть пустым</span
+          >
           <span
-            *ngIf="form.get('password')['errors']['minlength'] && form.get('password')['errors']['minlength']['requiredLength']">
-            Пароль должен быть больше {{ form.get('password')['errors']['minlength']['requiredLength'] }} символов.
-            Сейчас {{ form.get('password')['errors']['minlength']['actualLength'] }}.
+            *ngIf="
+              form.get('password')['errors']['minlength'] &&
+              form.get('password')['errors']['minlength']['requiredLength']
+            "
+          >
+            Пароль должен быть больше
+            {{ form.get("password")["errors"]["minlength"]["requiredLength"] }}
+            символов. Сейчас
+            {{ form.get("password")["errors"]["minlength"]["actualLength"] }}.
+          </span>
         </span>
-      </span>
       </div>
     </div>
     <div class="container-login100-form-btn m-t-32">
-      <button
-        [disabled]="form.invalid"
-        class="login100-form-btn"
-        type="submit">Войти
+      <button [disabled]="form.invalid" class="login100-form-btn" type="submit">
+        Войти
       </button>
     </div>
   </form>
