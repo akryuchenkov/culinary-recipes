@@ -1,18 +1,23 @@
-export class AuthService{
+import { Injectable } from '@angular/core';
 
-  private isAuthentificated = false;
+@Injectable({
+  providedIn: 'root',
+})
+export class AuthService {
+  constructor() {}
 
+  private isAuth = false;
 
-  login(){
-    this.isAuthentificated = true;
+  login() {
+    this.isAuth = true;
   }
 
-  logout(){
-    this.isAuthentificated = false;
+  logout() {
+    this.isAuth = false;
     window.localStorage.clear();
   }
 
-  isLoggedIn(): boolean{
-    return this.isAuthentificated;
+  isLoggedIn(): boolean {
+    return this.isAuth;
   }
 }
