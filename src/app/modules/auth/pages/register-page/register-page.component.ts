@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UserService} from '../../services/user.service';
+import {Router} from '@angular/router';
+import {User} from '../../model/user.model';
 
 @Component({
   selector: 'app-register-page',
@@ -9,17 +12,30 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class RegisterPageComponent implements OnInit {
   form: FormGroup;
 
-  constructor() { }
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
       name: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required, Validators.minLength(6)]),
-      agree: new FormControl(null, [Validators.requiredTrue]),
     });
   }
 
   onSubmit() {
+    const {email, password, name} = this.form.value;
+    const user = new User(email, password, name);
+
+    this.userService.createUser(user)
+      .subscribe(() => {
+        this.router.navigate(['/login'], {
+          queryParams: {
+            canLogin: true
+          }
+        });
+      });
   }
 }

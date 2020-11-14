@@ -10,5 +10,4 @@ import {AuthLayoutComponent} from './layouts/auth-layout/auth-layout.component';
   // bootstrap: [AuthLayoutComponent],
   // exports: [AuthLayoutComponent]
 })
-export class SharedModule {
-}
+export class SharedModule {}
