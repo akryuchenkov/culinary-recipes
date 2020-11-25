@@ -14,7 +14,7 @@ import { User } from '../../model/user.model';
 export class LoginPageComponent implements OnInit {
   form: FormGroup;
   message: Message;
-
+  user: User;
   constructor(
     private userService: UsersService,
     private authService: AuthService,
@@ -72,4 +72,13 @@ export class LoginPageComponent implements OnInit {
       }
     });
   }
+
+
+
+  /*
+  onRecord() {
+    this.router.navigate(['record']);
+  }
+*/
+
 }
