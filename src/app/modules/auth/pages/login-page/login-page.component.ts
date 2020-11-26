@@ -26,7 +26,7 @@ export class LoginPageComponent implements OnInit {
     this.message = new Message('danger', '');
 
     this.route.queryParams.subscribe((params: Params) => {
-      if (params['canLogin']) {
+      if (params.canLogin) {
         this.showMessage({
           text: 'Регистрация успешно завершена',
           type: 'success',
@@ -57,7 +57,7 @@ export class LoginPageComponent implements OnInit {
         if (user.password === formData.password) {
           window.localStorage.setItem('user', JSON.stringify(user));
           this.authService.login();
-          console.log('Вы успешно авторизованы');
+          this.router.navigate(['/contact', 'record']);
         } else {
           this.showMessage({
             text: 'Пароль введён неверно',
@@ -72,13 +72,4 @@ export class LoginPageComponent implements OnInit {
       }
     });
   }
-
-
-
-  /*
-  onRecord() {
-    this.router.navigate(['record']);
-  }
-*/
-
 }

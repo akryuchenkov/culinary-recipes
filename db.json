@@ -29,6 +29,26 @@
       "password": "test123",
       "name": "Liza",
       "id": 5
+    },
+    {
+      "email": "elizasoln@mail.ru",
+      "password": "789787878",
+      "name": "Токарева Елизавета Андреевна",
+      "id": 6
+    },
+    {
+      "email": "oksy77-77@mail.ru",
+      "password": "14789632",
+      "name": "Бучка",
+      "id": 7
+    }
+  ],
+  "record": [
+    {
+      "name": "Название рецепта",
+      "date": "0000-00-00",
+      "description": "Состав рецепта",
+      "id": 1
     }
   ]
 }

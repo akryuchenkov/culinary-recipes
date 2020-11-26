@@ -1,1 +1,47 @@
-<p>edit-record works!</p>
+<h2 class="title">Изменить рецепт</h2>
+<form>
+  <div class="form-group">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-user ti-user"></i></span>
+      <select
+        class="form-control"
+        id="e-select-category"
+        >
+        <option>
+          1 Запись
+          </option>
+        <option>
+          2 Запись
+        </option>
+        </select>
+    </div>
+  </div>
+  <div
+    class="form-group"
+  >
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-user ti-user"></i></span>
+      <input
+        type="text"
+        class= "form-control"
+        placeholder="Введите название записи"
+        >
+    </div>
+  </div>
+  <div
+    class="form-group"
+  >
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-user ti-user"></i></span>
+      <textarea
+        class= "form-control"
+        name="description"
+        placeholder="Новый рецепт"
+      ></textarea>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary btn-block"
+    type="submit"
+  >Изменить</button>
+</form>

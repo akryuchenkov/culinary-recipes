@@ -7,7 +7,7 @@ import {RecordComponent} from "../record/record.component";
 
 
 const routes: Routes = [
-  {path: '', component: SiteLayoutComponent, children: [
+  {path: 'contact', component: SiteLayoutComponent, children: [
       {path: 'record', component: RecordComponent}
     ]}
 ];
