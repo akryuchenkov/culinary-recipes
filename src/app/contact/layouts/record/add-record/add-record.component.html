@@ -8,7 +8,7 @@
       <input
         type = "text"
         class = "form-control"
-        placeholder="Введите название записи"
+        placeholder="Введите название рецепта"
       >
     </div>
   </div>
@@ -37,7 +37,22 @@
       ></textarea>
     </div>
   </div>
+
+  <span class="h5">Добавьте фото рецепта</span>
+  <div
+    class="form-group"
+  >
+    <div class="input-group">
+      <input
+        type="file"
+        class = "form-control-file"
+        accept="image/*"
+        name="photo"
+      >
+    </div>
+  </div>
   <button
+    class="btn btn-primary btn-block"
     type="submit"
   >Создать</button>
 </form>
