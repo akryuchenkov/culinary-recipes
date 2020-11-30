@@ -7,6 +7,10 @@ import {EditRecordComponent} from '../record/edit-record/edit-record.component';
 import {HeaderComponent} from '../shared/components/header/header.component';
 import {FooterComponent} from '../shared/components/footer/footer.component';
 import {SiteLayoutRoutingModule} from './site-layout-routing.module';
+import {RecordService} from '../shared/serviсes/record.service';
+import {FormsModule} from "@angular/forms";
+import {SharedModule} from "../../../modules/shared/shared.module";
+import {BrowserModule} from "@angular/platform-browser";
 
 
 
@@ -20,8 +24,10 @@ import {SiteLayoutRoutingModule} from './site-layout-routing.module';
     FooterComponent
   ],
   imports: [
-    CommonModule,
-    SiteLayoutRoutingModule
-  ]
+    BrowserModule,
+    SiteLayoutRoutingModule,
+    FormsModule
+  ],
+  providers: [RecordService],
 })
 export class SiteLayoutModule { }
