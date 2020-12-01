@@ -41,13 +41,13 @@
   </div>
   <div
     class="form-group"
-    [ngClass]="{'has-error': name.invalid && name.touched}"
+    [ngClass]="{'has-error': date.invalid && date.touched}"
   >
     <div class="input-group">
       <span class="input-group-addon"><i class="fa fa-user ti-user"></i></span>
       <input
+        type="date"
         class= "form-control"
-        name="description"
         placeholder="Новый рецепт"
         name="date"
         ngModel=""
@@ -57,11 +57,35 @@
     </div>
     <span
       class="form-help-text"
-      *ngIf="name.invalid && name.touched"
+      *ngIf="date.invalid && date.touched"
     >
       <span>Это поле обязательно для заполнения</span>
     </span>
   </div>
+
+    <div
+      class="form-group"
+      [ngClass]="{'has-error':description.invalid && description.touched}"
+    >
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-user ti-user"></i></span>
+        <textarea
+          class= "form-control"
+          placeholder="Новый рецепт"
+          ngModel
+          name="description"
+          #description="ngModel"
+          required
+        ></textarea>
+      </div>
+      <span
+        class="form-help-text"
+        *ngIf="description.invalid && description.touched"
+      >
+      <span>Это поле обязательно для заполнения</span>
+    </span>
+    </div>
+
       <span class="h5">Добавьте фото рецепта</span>
       <div
         class="form-group"
