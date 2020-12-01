@@ -4,6 +4,7 @@ import { UsersService } from '../../services/users.service';
 import { Router } from '@angular/router';
 import { User } from '../../model/user.model';
 
+
 @Component({
   selector: 'app-register-page',
   templateUrl: './register-page.component.html',
@@ -11,12 +12,11 @@ import { User } from '../../model/user.model';
 })
 export class RegisterPageComponent implements OnInit {
   form: FormGroup;
-
   constructor(private userService: UsersService, private router: Router) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      email: new FormControl(null, [Validators.required, Validators.email],this.forbiddenEmails.bind(this)),
+      email: new FormControl(null, [Validators.required, Validators.email], this.forbiddenEmails.bind(this)),
       name: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [
         Validators.required,
@@ -37,14 +37,16 @@ export class RegisterPageComponent implements OnInit {
       });
     });
   }
+
   forbiddenEmails(control: FormControl): Promise<any>{
     return new Promise((resolve, reject) => {
       this.userService.get(control.value)
         .subscribe((user: User) => {
           if (user) {
-            resolve({forbiddenEmail: true});
+           resolve({forbiddenEmail: true});
           }else{
             resolve(null);
+
           }
         });
     });

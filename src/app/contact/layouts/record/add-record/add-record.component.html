@@ -1,6 +1,12 @@
 <h2 class="title">Добавить новый рецепт</h2>
 <form #f="ngForm"(ngSubmit)="onSubmit(f)">
   <div
+    class="alert alert-{{message.type}}"
+    *ngIf="message.text"
+  >
+    {{message.text}}
+  </div>
+  <div
     class="form-group"
     [ngClass]="{'has-error':name.invalid && name.touched}"
   >
@@ -83,6 +89,7 @@
     </div>
   </div>
   <button
+    class="btn btn-primary btn-block"
     type="submit"
     [disabled]="f.invalid"
   >Создать</button>
