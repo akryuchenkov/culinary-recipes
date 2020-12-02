@@ -1,0 +1,11 @@
+<div class="mt-5">
+  <div class="container">
+    <div class="row wrap">
+      <app-receipt-card
+        *ngFor="let record of records"
+        class="col-3"
+        [record]="record"
+      ></app-receipt-card>
+    </div>
+  </div>
+</div>
