@@ -8,6 +8,6 @@ export class RecordService {
   }
 
   createRecord(record: Record) {
-    return this.http.post('http://localhost:4200/record', record);
+    return this.http.post('http://localhost:3000/record', record);
   }
 }
