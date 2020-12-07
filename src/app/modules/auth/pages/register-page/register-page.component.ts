@@ -30,7 +30,7 @@ export class RegisterPageComponent implements OnInit {
     const user = new User(email, password, name);
 
     this.userService.create(user).subscribe(() => {
-      this.router.navigate(['/login'], {
+      this.router.navigate(['auth/login'], {
         queryParams: {
           canLogin: true,
         },

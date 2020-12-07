@@ -7,9 +7,9 @@ import {RecordComponent} from "../record/record.component";
 
 
 const routes: Routes = [
-  {path: 'contact', component: SiteLayoutComponent, children: [
-      {path: 'record', component: RecordComponent}
-    ]}
+ // {path: 'contact', component: SiteLayoutComponent, children: [
+   ///   {path: 'record', component: RecordComponent}
+    //]}
 ];
 
 @NgModule({

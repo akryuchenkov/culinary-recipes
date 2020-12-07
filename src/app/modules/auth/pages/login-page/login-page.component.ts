@@ -57,7 +57,7 @@ export class LoginPageComponent implements OnInit {
         if (user.password === formData.password) {
           window.localStorage.setItem('user', JSON.stringify(user));
           this.authService.login();
-          this.router.navigate(['/contact', 'record']);
+          this.router.navigate(['']);
         } else {
           this.showMessage({
             text: 'Пароль введён неверно',
