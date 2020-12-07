@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Record} from "../shared/models/record.model";
+import {RecordService} from "../shared/serviсes/record.service";
 
 @Component({
   selector: 'app-record',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./record.component.css']
 })
 export class RecordComponent implements OnInit {
+  records: Record[] = [];
+  isLoaded = false;
 
-  constructor() { }
+  constructor(private recordService: RecordService ) { }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit() {
+    this.recordService.getRecords()
+      .subscribe( (records: Record[]) => {
+      this.records = records;
+      this.isLoaded = true;
+    });
+}
+newRecordAdded(record: Record){
+  this.records.push(record);
+}
 }

@@ -6,12 +6,13 @@
       <select
         class="form-control"
         id="e-select-category"
+        [(ngModel)]="currentRecordId"
         >
-        <option>
-          1 Запись
-          </option>
-        <option>
-          2 Запись
+        <option
+          *ngFor="let c of records"
+          [value]="c.id"
+        >
+          {{c.name}}
         </option>
         </select>
     </div>

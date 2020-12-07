@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {RecordService} from "../../shared/serviсes/record.service";
 import {FormGroup, NgForm} from "@angular/forms";
 import {Record} from "../../shared/models/record.model";
@@ -11,6 +11,7 @@ import {Message} from "../../../../modules/auth/model/message.model";
 })
 export class AddRecordComponent implements OnInit {
   message: Message;
+  @Output() onRecordAdd = new EventEmitter<Record>();
   constructor(private recordServise: RecordService) { }
 
   ngOnInit(): void {
@@ -28,9 +29,15 @@ export class AddRecordComponent implements OnInit {
 onSubmit(form: NgForm){
     const {name, date, description} = form.value;
     const record = new Record(name, date, description);
+
     this.recordServise.createRecord(record)
       .subscribe(() => {
-       form.reset();
+        this.showMessage({
+          text: 'Новый пост успешно создан',
+          type: 'success'
+          });
+        form.reset();
+       this.onRecordAdd.emit(record);
       });
 }
 }
