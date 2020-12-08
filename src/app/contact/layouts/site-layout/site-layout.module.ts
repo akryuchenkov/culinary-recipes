@@ -11,23 +11,28 @@ import {RecordService} from '../shared/serviсes/record.service';
 import {FormsModule} from "@angular/forms";
 import {SharedModule} from "../../../modules/shared/shared.module";
 import {BrowserModule} from "@angular/platform-browser";
+import {DropdownDirective} from "../shared/directive/dropdown.directive";
 
 
 
 @NgModule({
-  declarations: [
-    SiteLayoutComponent,
-    RecordComponent,
-    AddRecordComponent,
-    EditRecordComponent,
-    HeaderComponent,
-    FooterComponent
-  ],
-  imports: [
-    BrowserModule,
-    SiteLayoutRoutingModule,
-    FormsModule
-  ],
-  providers: [RecordService],
+    declarations: [
+        SiteLayoutComponent,
+        RecordComponent,
+        AddRecordComponent,
+        EditRecordComponent,
+        HeaderComponent,
+        FooterComponent,
+        DropdownDirective
+    ],
+    imports: [
+        BrowserModule,
+        SiteLayoutRoutingModule,
+        FormsModule
+    ],
+    providers: [RecordService],
+    exports: [
+        HeaderComponent
+    ]
 })
 export class SiteLayoutModule { }

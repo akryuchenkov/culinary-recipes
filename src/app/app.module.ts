@@ -13,6 +13,7 @@ import { SystemModule } from './modules/system/system.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { RecordService } from './contact/layouts/shared/serviсes/record.service';
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -25,7 +26,7 @@ import { RecordService } from './contact/layouts/shared/serviсes/record.service
     // SiteLayoutModule,
     AdminModule,
     SystemModule,
-    SharedModule,
+    SharedModule
   ],
   providers: [UsersService, AuthService, RecordService],
   bootstrap: [AppComponent],

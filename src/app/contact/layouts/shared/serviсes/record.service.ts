@@ -15,4 +15,7 @@ export class RecordService {
   getRecords(): Observable<Record[]> {
     return this.http.get<Record[]>('http://localhost:3000/record');
   }
+  updateRecord(data: Record){
+    return this.http.put(`http://localhost:3000/record/${data.id}`, data);
+  }
 }

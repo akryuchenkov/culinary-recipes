@@ -1,12 +1,20 @@
 <h2 class="title">Изменить рецепт</h2>
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div
+    class="alert alert-{{message.type}}"
+    *ngIf="message.text"
+  >
+    {{message.text}}
+  </div>
   <div class="form-group">
     <div class="input-group">
       <span class="input-group-addon"><i class="fa fa-user ti-user"></i></span>
       <select
         class="form-control"
         id="e-select-category"
-        [(ngModel)]="currentRecordId" name="first"
+        [(ngModel)]="currentRecordId"
+        (change)="OnRecordChange()"
+        [ngModelOptions]="{standalone: true}"
         >
         <option
           *ngFor="let c of records"
@@ -31,6 +39,7 @@
         ngModel=""
         #name="ngModel"
         required
+        [ngModel]="currentRecord.name"
         >
     </div>
     <span
@@ -54,6 +63,7 @@
         ngModel=""
         #date="ngModel"
         required
+        [ngModel]="currentRecord.date"
       >
     </div>
     <span
@@ -77,6 +87,7 @@
           name="description"
           #description="ngModel"
           required
+          [ngModel]="currentRecord.description"
         ></textarea>
       </div>
       <span

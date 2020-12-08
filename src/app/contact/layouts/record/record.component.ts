@@ -20,7 +20,12 @@ export class RecordComponent implements OnInit {
       this.isLoaded = true;
     });
 }
-newRecordAdded(record: Record){
+  newRecordAdded(record: Record){
     this.records.push(record);
+  }
+  recordWasEdited(record: Record){
+    const idx = this.records
+      .findIndex(c => c.id === record.id);
+    this.records[idx] = record;
   }
 }

@@ -6,16 +6,15 @@
   </section>
   <section class="section" *ngIf="isLoaded">
     <div class="row record">
-<section class="section">
     <div class="col-md-6">
       <app-add-record (onRecordAdd)="newRecordAdded($event)"></app-add-record>
     </div>
     <div class="col-md-6">
       <app-edit-record
         [records]="records"
+        (onRecordEdit)="recordWasEdited($event)"
       ></app-edit-record>
     </div>
-</section>
     </div>
 </section>
 
