@@ -21,6 +21,6 @@ export class RecordComponent implements OnInit {
     });
 }
 newRecordAdded(record: Record){
-  this.records.push(record);
-}
+    this.records.push(record);
+  }
 }
