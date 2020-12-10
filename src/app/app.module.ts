@@ -26,7 +26,8 @@ import { RecordService } from './contact/layouts/shared/serviсes/record.service
     // SiteLayoutModule,
     AdminModule,
     SystemModule,
-    SharedModule
+    SharedModule,
+    SiteLayoutModule
   ],
   providers: [UsersService, AuthService, RecordService],
   bootstrap: [AppComponent],

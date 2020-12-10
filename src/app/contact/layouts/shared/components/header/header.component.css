@@ -5,6 +5,7 @@
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: #e0e0e0;
+  border-radius: 10px;
 }
 
 .optional_menu {
@@ -12,6 +13,7 @@
   font-family: Ubuntu-Regular serif;
   color: black;
 }
+
 a {
   cursor: pointer;
   text-decoration: none;
