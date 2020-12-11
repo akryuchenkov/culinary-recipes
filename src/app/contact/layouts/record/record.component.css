@@ -1,0 +1,13 @@
+.section1{
+  display: flex;
+  justify-content: center;
+
+}
+.fon{
+  background: url("https://images-ext-1.discordapp.net/external/gZLfVxFHF6GeO8Nh3qU5U0BIVSZnrSBROTxkK6Glnrk/https/oboi-ma.ru/f/product/880681.jpg?width=854&height=513") no-repeat center top fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 800px;
+}

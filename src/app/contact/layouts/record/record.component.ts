@@ -10,7 +10,9 @@ import {RecordService} from "../shared/serviсes/record.service";
 export class RecordComponent implements OnInit {
   records: Record[] = [];
   isLoaded = false;
-
+  public ShowForm(): void {
+    this.isLoaded = true;
+  }
   constructor(private recordService: RecordService ) { }
 
   ngOnInit() {

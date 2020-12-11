@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {NgForm} from "@angular/forms";
-import {Record} from "../../shared/models/record.model";
-import {RecordService} from "../../shared/serviсes/record.service";
-import {Message} from "../../../../modules/auth/model/message.model";
+import {NgForm} from '@angular/forms';
+import {Record} from '../../shared/models/record.model';
+import {RecordService} from '../../shared/serviсes/record.service';
+import {Message} from '../../../../modules/auth/model/message.model';
 
 @Component({
   selector: 'app-edit-record',
@@ -10,14 +10,21 @@ import {Message} from "../../../../modules/auth/model/message.model";
   styleUrls: ['./edit-record.component.css']
 })
 export class EditRecordComponent implements OnInit {
+
+  constructor(private recordService: RecordService) { }
   currentRecordId = 1;
   currentRecord: Record;
   message: Message;
+  public isShowForm = false;
+
  @Input() records: Record[] = [];
  @Output() onRecordEdit = new EventEmitter<Record>();
-
-  constructor(private recordService: RecordService) { }
-
+  public ShowForm(): void {
+    this.isShowForm = true;
+}
+  public HideForm(): void {
+    this.isShowForm = false;
+  }
   ngOnInit(): void {
     this.message = new Message('success', '');
     this.OnRecordChange();
@@ -29,7 +36,7 @@ export class EditRecordComponent implements OnInit {
     this.recordService.updateRecord(record)
       .subscribe((data: Record) => {
         this.onRecordEdit.emit(data);
-        this.message.text = 'Пост успешно добавлен';
+        this.message.text = 'Пост успешно изменен';
         window.setTimeout(() => this.message.text = '', 5000);
       });
   }

@@ -1,20 +1,21 @@
+<div class="fon">
 <div class="title-block">
-  <h3>Список рецептов</h3>
+  <h3 class="text-center" style="color: #d41872">Список рецептов</h3>
 </div>
 <section class="section text-center" *ngIf="!isLoaded">
   Загрузка данных...
   </section>
-  <section class="section" *ngIf="isLoaded">
-    <div class="row record">
-    <div class="col-md-6">
+  <section class="section " *ngIf="isLoaded">
+
+    <section class="section1">
       <app-add-record (onRecordAdd)="newRecordAdded($event)"></app-add-record>
-    </div>
-    <div class="col-md-6">
+  </section>
+    <section class="section text-center section1">
       <app-edit-record
         [records]="records"
         (onRecordEdit)="recordWasEdited($event)"
       ></app-edit-record>
-    </div>
-    </div>
-</section>
+    </section>
 
+</section>
+</div>
