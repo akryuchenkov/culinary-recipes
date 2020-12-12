@@ -1,7 +1,9 @@
-<div class="card">
+<div class="card border-0">
+  <h3 class="card-header text-center" style="background-color: wheat; color: crimson">
+    {{ record.name }}
+   </h3>
   <div class="card-body">
-    <h5 class="card-title">{{ record.name }}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{ record.date }}</h6>
+    <h6 class="card-subtitle mb-2 text-muted"><b>{{ record.date }}</b></h6>
     <p class="card-text">
       {{ record.description }}
     </p>

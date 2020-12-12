@@ -1,4 +1,38 @@
 .search{
+  width: 150px;
+  height: 20px;
+  margin-right: 20px;
+}
+.search1{
   width: 130px;
-  height: 30px;
+  background-color: crimson;
+  border-color: crimson;
+  height: 33px;
+  font-family: Ubuntu-Bold serif;
+}
+.search2{
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+.search3 {
+  cursor: pointer;
+  width: 150px;
+  height: 100px;
+  margin-top: 10px;
+ }
+.f1 {
+  font-size: 15px;
+}
+.fon{
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 800px;
+}
+.f2 {
+  margin-top: 60px;
+}
+.f3 {
+  margin-top: 15px;
 }
