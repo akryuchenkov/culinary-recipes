@@ -33,7 +33,8 @@ import {DropdownDirective} from "../shared/directive/dropdown.directive";
     providers: [RecordService],
     exports: [
         HeaderComponent,
-        FooterComponent
+        FooterComponent,
+        DropdownDirective
     ]
 })
 export class SiteLayoutModule { }

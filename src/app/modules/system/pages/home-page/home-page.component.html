@@ -1,9 +1,28 @@
-
+<div class="form-inline pull-right m-r-2 ">
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      [placeholder]="searchPlaceholder"
+      [(ngModel)]="searchValue"
+      >
+  </div>
+  <div class="btn-group" appDirective>
+    <button type="button" class="btn btn-secondary dropdown-toggle">
+      Параметр
+    </button>
+    <div class="dropdown-menu profile-dropdown-menu">
+      <a class="dropdown-item"(click)="changeCriteria('name')">Название рецепта</a>
+      <a class="dropdown-item"(click)="changeCriteria('date')">Дата</a>
+      <a class="dropdown-item"(click)="changeCriteria('description')">Ингредиент</a>
+    </div>
+  </div>
+</div>
 <div class="mt-5">
   <div class="container">
     <div class="row wrap">
       <app-receipt-card
-        *ngFor="let record of records"
+        *ngFor="let record of records | appFilter:searchValue:searchField"
         class="col-3"
         [record]="record"
       ></app-receipt-card>
