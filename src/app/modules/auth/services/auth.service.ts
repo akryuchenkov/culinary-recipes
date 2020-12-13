@@ -4,12 +4,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor() {}
+  constructor() {
+    this.isAuth = Boolean(localStorage.getItem('isAuth'));
+  }
 
   private isAuth = false;
 
   login() {
     this.isAuth = true;
+    localStorage.setItem('isAuth', 'true');
   }
 
   logout() {
@@ -17,7 +20,7 @@ export class AuthService {
     window.localStorage.clear();
   }
 
-  isLoggedIn(): boolean {
+  get isLoggedIn(): boolean {
     return this.isAuth;
   }
 }

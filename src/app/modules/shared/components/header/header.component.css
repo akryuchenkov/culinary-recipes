@@ -26,6 +26,7 @@
   font-size: 20px;
   font-family: Ubuntu-Regular serif;
   color: black;
+  cursor: pointer;
 }
 
 .registration {
@@ -33,4 +34,5 @@
   font-family: Ubuntu-Regular serif;
   margin-left: 50px;
   color: black;
+  cursor: pointer;
 }
