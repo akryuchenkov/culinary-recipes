@@ -1,12 +1,12 @@
-.c1
-{
+.c1 {
   background-color: #e0e0e0;
 }
-.up{
+.up {
   margin-top: 100px;
 }
-.fon{
-  background: url("https://images-ext-1.discordapp.net/external/7WYCTET5_JX-uRF2Coh1DX5QT59U20nJKZ3cD1TiEWg/https/www.oboykin.ru/assets/images/products/28370/998638-%281%29.jpg?width=1142&height=476") no-repeat center top fixed;
+.fon {
+  background: url("https://images-ext-1.discordapp.net/external/7WYCTET5_JX-uRF2Coh1DX5QT59U20nJKZ3cD1TiEWg/https/www.oboykin.ru/assets/images/products/28370/998638-%281%29.jpg?width=1142&height=476")
+    no-repeat center top fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -14,12 +14,12 @@
 }
 
 img {
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
 }
 
-img:hover{
+img:hover {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
   -o-transform: scale(1.2);
