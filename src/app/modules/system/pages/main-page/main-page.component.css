@@ -24,3 +24,9 @@ img:hover {
   -moz-transform: scale(1.2);
   -o-transform: scale(1.2);
 }
+.card{
+  height: 380px;
+}
+.card-img-top{
+  height: 220px;
+}

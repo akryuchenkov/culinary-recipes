@@ -10,17 +10,11 @@ import {Router} from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  user: User;
-  constructor(private authService: AuthService,
-              private router: Router
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.user = JSON.parse(window.localStorage.getItem('user'));
+
   }
-  onLogout() {
-    this.authService.logout();
-    this.router.navigate(['/auth', 'login']);
-  }
+
 
 }

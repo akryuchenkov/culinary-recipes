@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   background-color: #ffffff;
   position: fixed;
   z-index: 999;
@@ -35,4 +34,21 @@
   margin-left: 50px;
   color: black;
   cursor: pointer;
+}
+
+.menu{
+  font-size: 20px;
+  font-family: Ubuntu-Regular serif;
+  color: black;
+  margin-right: 55px;
+  cursor: pointer;
+}
+.main_menu{
+  display: flex;
+  justify-content: space-between;
+}
+.user{
+  color: #999999;
+  text-decoration: none;
+  cursor: auto;
 }

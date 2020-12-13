@@ -1,52 +1,28 @@
 {
   "users": [
     {
-      "id": 1,
-      "email": "admin@qwe.tu",
+      "email": "admin@mail.ru",
       "password": "123456789",
-      "name": "Администратор"
-    },
-    {
-      "email": "123@mail.ru",
-      "password": "123456",
-      "name": "ИМЯ",
-      "id": 2
+      "name": "Администратор",
+      "id": 1
     },
     {
       "email": "ira@mail.ru",
       "password": "202020",
       "name": "Irina",
-      "id": 3
-    },
-    {
-      "email": "liza@gmail.com",
-      "password": "l12345",
-      "name": "Liza",
-      "id": 4
-    },
-    {
-      "email": "test123@gmail.com",
-      "password": "test123",
-      "name": "Liza",
-      "id": 5
+      "id": 2
     },
     {
       "email": "elizasoln@mail.ru",
       "password": "789787878",
       "name": "Токарева Елизавета Андреевна",
-      "id": 6
+      "id": 3
     },
     {
-      "email": "oksy77-77@mail.ru",
-      "password": "14789632",
-      "name": "Бучка",
-      "id": 7
-    },
-    {
-      "email": "okslly77-77@mail.ru",
-      "password": "4545435",
-      "name": "Оксана",
-      "id": 8
+      "email": "123@mail.ru",
+      "password": "123456",
+      "name": "Irina",
+      "id": 2
     }
   ],
   "record": [

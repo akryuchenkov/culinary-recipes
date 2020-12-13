@@ -7,8 +7,14 @@
         >Зарегистрироваться</a
       >
     </div>
-    <div *ngIf="isAuth">
+    <div *ngIf="isAuth" class="main_menu">
+      <a class="menu" routerLink="">Рецепты</a>
+      <a class="menu" routerLink="/home">Мои рецепты</a>
+      <a class="menu" routerLink="/contact/record">Добавить/изменить рецепт</a>
+      <a class="menu user">Здравствуйте, {{user.name}}</a>
       <a class="login" (click)="onLogout()">Выйти</a>
     </div>
   </div>
 </nav>
+
+
