@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from '../../services/users.service';
 import { Router } from '@angular/router';
 import { User } from '../../model/user.model';
+import {Message} from "../../model/message.model";
 
 @Component({
   selector: 'app-register-page',
@@ -11,9 +12,11 @@ import { User } from '../../model/user.model';
 })
 export class RegisterPageComponent implements OnInit {
   form: FormGroup;
+  message: Message;
   constructor(private userService: UsersService, private router: Router) {}
 
   ngOnInit(): void {
+    this.message = new Message('danger', '');
     this.form = new FormGroup({
       email: new FormControl(
         null,
@@ -40,12 +43,22 @@ export class RegisterPageComponent implements OnInit {
       });
     });
   }
+  private showMessage(message: Message) {
+    this.message = message;
 
+    window.setTimeout(() => {
+      this.message.text = '';
+    }, 5000);
+  }
   forbiddenEmails(control: FormControl): Promise<any> {
     return new Promise((resolve, reject) => {
       this.userService.get(control.value).subscribe((user: User) => {
         if (user) {
           resolve({ forbiddenEmail: true });
+          this.showMessage({
+            text: 'Такой email уже зарегистрирован',
+            type: 'danger',
+          });
         } else {
           resolve(null);
         }
