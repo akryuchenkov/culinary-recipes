@@ -1,33 +1,46 @@
-<div class="fon" style="background: url(/assets/fon.jpg) no-repeat center top fixed; background-size:1600px">
-<div class="form-inline pull-right m-r-2 search2 f3">
-  <div class="form-group search ">
-    <input
-      type="text"
-      class="form-control font-italic f1"
-      [placeholder]="searchPlaceholder"
-      [(ngModel)]="searchValue"
+<div
+  class="fon"
+  style="
+    background: url(/assets/fon.jpg) no-repeat center top fixed;
+    height: calc(100vh - 60px - 70px)
+  "
+>
+  <div class="form-inline pull-right m-r-2 search2 f3">
+    <div class="form-group search">
+      <input
+        type="text"
+        class="form-control font-italic f1"
+        [placeholder]="searchPlaceholder"
+        [(ngModel)]="searchValue"
+      />
+    </div>
+    <div class="btn-group search" appDirective>
+      <button
+        type="button"
+        class="btn btn-secondary dropdown-toggle search1 f1"
       >
-  </div>
-  <div class="btn-group search" appDirective>
-    <button type="button" class="btn btn-secondary dropdown-toggle search1 f1">
-      Параметр
-    </button>
-    <div class="dropdown-menu profile-dropdown-menu search3">
-      <a class="dropdown-item"(click)="changeCriteria('name')">Название рецепта</a>
-      <a class="dropdown-item"(click)="changeCriteria('date')">Дата</a>
-      <a class="dropdown-item"(click)="changeCriteria('description')">Ингредиент</a>
+        Параметр
+      </button>
+      <div class="dropdown-menu profile-dropdown-menu search3">
+        <a class="dropdown-item" (click)="changeCriteria('name')"
+          >Название рецепта</a
+        >
+        <a class="dropdown-item" (click)="changeCriteria('date')">Дата</a>
+        <a class="dropdown-item" (click)="changeCriteria('description')"
+          >Ингредиент</a
+        >
+      </div>
     </div>
   </div>
-</div>
-<div>
-  <div class="container">
-    <div class="row wrap f2">
-      <app-receipt-card
-        *ngFor="let record of records | appFilter:searchValue:searchField"
-        class="col-3 mb-4"
-        [record]="record"
-      ></app-receipt-card>
+  <div>
+    <div class="container">
+      <div class="row wrap f2">
+        <app-receipt-card
+          *ngFor="let record of records | appFilter: searchValue:searchField"
+          class="col-3 mb-4"
+          [record]="record"
+        ></app-receipt-card>
+      </div>
     </div>
   </div>
-</div>
 </div>

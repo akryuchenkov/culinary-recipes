@@ -1,23 +1,42 @@
 <div class="fon">
   <div class="pt-5 container">
     <div class="row">
-      <div class="col-sm-4 mb-5">
-        <!-- сделайте лучше компонент карточки :)
-        и плюс рецепты то берутся с сервера )) -->
+      <!-- сделайте лучше компонент карточки :)
+      и плюс рецепты то берутся с сервера )) -->
+      <!-- <div *ngFor="let record of records" class="col-sm-4 mb-5">
         <div class="card">
           <div class="card-body">
             <img
               class="card-img-top"
               src="/assets/ruletiki.png"
-              alt="Роллы из лаваша с творожно-банановой начинкой"
+              [alt]="record.name"
             />
             <h2 class="card-title">
-              Роллы из лаваша с творожно-банановой начинкой
+              {{ record.name }}
             </h2>
-            <p class="card-text"><b>12.09.2020</b></p>
             <p class="card-text">
-              Лаваш тонкий - 1 лист, творожная масса - 200 г, бананы - 2 шт,
-              абрикосы - 120 г, малина - 50 г
+              <b>{{ record.date }}</b>
+            </p>
+            <p class="card-text">
+              {{ record.description }}
+            </p>
+          </div>
+        </div>
+      </div> -->
+      <div class="col-sm-4 mb-5">
+        <div class="card">
+          <div class="card-body">
+            <img
+              src="/assets/pizza3.jpeg"
+              class="card-img-top"
+              alt="Американская пицца"
+            />
+            <h2 class="card-title">Американская пицца</h2>
+            <p class="card-text"><b>6.05.2020</b></p>
+            <p class="card-text">
+              Сыр моцарелла - 250 г, сыр пармезан - 100 г, колбаса салями - 200
+              г, шампиньоны - 150 г, оливки без косточек - 100 г, соус томатный
+              - 200 г
             </p>
           </div>
         </div>
